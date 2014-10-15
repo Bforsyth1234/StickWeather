@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html ng-app="myJS">
+<head>
+    <title></title>
+    @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+        <link href="~/App/Views/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <div ng-view></div>
+    <script src="~/scripts/angular.min.js"></script>
+    <script src="~/scripts/angular-route.min.js"></script>
+
+    <script src="~/app/myjs.js"></script>
+    <script src="~/app/scripts/controller/homeviewcontroller.js"></script>
+    <script src="~/app/scripts/services/weatherservice.js"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>
