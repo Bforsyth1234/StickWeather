@@ -1,0 +1,25 @@
+﻿
+<div class="container" ng-controller="HomeController" style="background-image:url(../../img/1.gif) ">
+    <form class="searchWeather">
+        <input type="text" ng-model="zip" placeholder="Enter zip for forcast..." />
+        <input type="submit" value="Search" ng-click="findWeather(zip)" />
+
+        <p ng-show="zip">Searching the forcasts for: {{zip}}</p>
+        <div ng-hide="!haveZip">
+            <h1>Forcast for: {{place.location.city}}</h1>
+            
+            
+            <h3>
+                <img class="img-thumbnail forecast-img" src="../img/{{place.item.condition.code}}.png" />
+                Current: {{ place.item.condition.text }} | {{ place.item.condition.temp }}°
+            </h3>
+            <h2>Current: {{place.location.text}} {{place.item.condition.temp}}&deg; </h2>
+            <div ng-repeat="forecast in place.item.forecast">
+                <p><strong>{{ forecast.date }}</strong> – {{ forecast.text }}</p>
+                <p>H: {{ forecast.high }}&deg; | L: {{ forecast.low }}&deg;</p>
+            </div>
+        </div>
+    </form>
+
+</div>
+
